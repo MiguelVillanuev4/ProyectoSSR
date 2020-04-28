@@ -1,0 +1,17 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class limiteCarreteras : MonoBehaviour
+{
+    public MotorCalles MotorCallesScript;
+
+    public void OnTriggerEnter2D ( Collider2D cInfo)
+    {
+        if(cInfo.gameObject.tag == "LimiteCarreteras")
+        {
+            Destroy(cInfo.transform.parent.gameObject);
+            MotorCallesScript.CreaCalles();
+        }
+    }
+}
